@@ -1,14 +1,14 @@
-version: '3.8'
+version: '3.3'
 services:
     php-apache-environment:
         container_name: php-apache
         build:
             context: ./php
-            dockerfile: /root/Dockerfile
+            dockerfile: ./Dockerfile
         depends_on:
             - db
         volumes:
-            - ./php/src:/var/www/html/
+            - ./:/var/www/html/
         ports:
             - 8000:80
     db:
